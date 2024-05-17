@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: episode5-backend-deployment
+  labels:
+    app: episode5-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: episode5-backend
+  template:
+    metadata:
+      labels:
+        app: episode5-backend
+    spec:
+      containers:
+      - name: episode5-backend
+        image: sheheryar1166/episode5-backend
+        ports:
+        - containerPort: 5000

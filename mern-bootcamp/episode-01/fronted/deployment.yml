@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: episode1-frontend-deployment
+  labels:
+    app: episode1-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: episode1-frontend
+  template:
+    metadata:
+      labels:
+        app: episode1-frontend
+    spec:
+      containers:
+      - name: episode1-frontend
+        image: sheheryar1166/episode1-frontend
+        ports:
+        - containerPort: 3000
